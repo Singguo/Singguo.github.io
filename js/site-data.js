@@ -22,6 +22,7 @@
     })
     .catch((error) => {
       console.error("网站数据加载失败：", error);
+      window.SITE_DATA_ERROR = error;
       window.SITE_DATA = {};
       return window.SITE_DATA;
     });

@@ -25,12 +25,33 @@
     const candidate = String(value == null ? "" : value).trim();
     if (!candidate) return "#";
     try {
-      const protocol = new URL(candidate, document.baseURI).protocol.toLowerCase();
+      const resolved = new URL(candidate, document.baseURI);
+      const protocol = resolved.protocol.toLowerCase();
+      if (/\.(md|markdown)$/i.test(resolved.pathname) &&
+        (resolved.origin === location.origin || protocol === "file:")) {
+        return esc(markdownViewerUrl(candidate));
+      }
       if (["http:", "https:", "mailto:", "tel:"].includes(protocol)) return esc(candidate);
     } catch (_) {
       return "#";
     }
+    if (!/^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(candidate) && /\.(md|markdown)(?:[?#].*)?$/i.test(candidate)) {
+      return esc(markdownViewerUrl(candidate));
+    }
     return "#";
+  }
+
+  function markdownViewerUrl(candidate) {
+    const file = new URL(candidate, document.baseURI);
+    // Resolve from the current document so project Pages paths such as /repo/ are preserved.
+    const path = location.pathname;
+    const coursesIndex = path.indexOf("/courses/");
+    const siteRoot = coursesIndex >= 0
+      ? new URL(path.slice(0, coursesIndex + 1), location.origin)
+      : new URL(path.replace(/[^/]*$/, ""), location.origin);
+    const viewer = new URL("markdown.html", new URL("courses/", siteRoot));
+    viewer.searchParams.set("file", file.pathname + file.search);
+    return viewer.href;
   }
 
   function courseUrl(id) {
@@ -79,7 +100,7 @@
     <span class="tag">${esc(semesterLabel(course))}</span>
     <h3>${esc(course.title)}</h3>
     <p>${esc(course.description)}</p>
-    <div class="meta">讲义 · 代码 · 作业 · 实验 · 视频</div>
+    <div class="meta">讲义 · 资源 · 作业 · 实验 · 视频</div>
     <a href="${courseUrl(course.id)}">进入课程 →</a>
   </article>`).join("")
       : '<p style="color:#888">课程资料建设中。</p>';
@@ -117,7 +138,7 @@
     ["assignment", "📝 作业", "题目、提交要求与评分标准。"],
     ["video", "🎬 课堂视频", "课程录屏与补充讲解。"],
   ];
-  const WEEK_LABELS = { slides: "讲义", resources: "资源", code: "资源", assignment: "作业", video: "视频", experiment: "实验" };
+  const WEEK_LABELS = { slides: "讲义", resources: "资源", assignment: "作业", video: "视频", experiment: "实验" };
 
   function renderCoursePage(data) {
     const id = new URLSearchParams(location.search).get("id");
@@ -259,6 +280,12 @@
   }
 
   READY.then((data) => {
+    if (window.SITE_DATA_ERROR) {
+      document.querySelectorAll("[data-render]").forEach((element) => {
+        element.innerHTML = '<p class="data-error">本地直接打开 HTML 时，浏览器会阻止读取 JSON。请使用 GitHub Pages 地址，或运行 <code>python3 -m http.server 8080</code> 后再预览。</p>';
+      });
+      return;
+    }
     hydrateFields(data);
     document.querySelectorAll('[data-render="course-cards"]').forEach((element) => renderCourseCards(element, data));
     document.querySelectorAll('[data-render="course-rows"]').forEach((element) => renderCourseRows(element, data));

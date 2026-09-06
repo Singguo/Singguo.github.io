@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>课程资料 | 郭畅（Sing）</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="../index.html">Sing</a>
+        <nav>
+          <a href="../index.html">首页</a>
+          <a href="../about.html">个人信息</a>
+          <a href="../research.html">科研</a>
+          <a class="active" href="../courses.html">课程</a>
+          <a href="../resources.html">资源</a>
+          <a href="../blog/index.html">个人博客</a>
+          <a href="../contact.html">联系</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container page markdown-page">
+      <p class="eyebrow">COURSE NOTE</p>
+      <p><a class="text-link" id="back-link" href="../courses.html">← 返回课程</a></p>
+      <article class="markdown-body" id="markdown-content">
+        <p>正在加载 Markdown 文件……</p>
+      </article>
+    </main>
+    <footer>
+      <div class="container footer-wrap"><span>© <span data-field="site.copyrightYear">2026</span> <span data-field="teacher.initials">Sing</span></span><span data-field="site.footerTagline">Academic · Teaching · Open Resources</span></div>
+    </footer>
+    <script src="../js/site-data.js"></script>
+    <script src="../js/site-render.js"></script>
+    <script src="../js/markdown-render.js"></script>
+    <script>
+      (async function () {
+        const content = document.getElementById("markdown-content");
+        const params = new URLSearchParams(location.search);
+        const file = params.get("file");
+        if (!file) {
+          content.innerHTML = "<p class=\"data-error\">没有指定 Markdown 文件。</p>";
+          return;
+        }
+        try {
+          const coursesIndex = location.pathname.indexOf("/courses/");
+          const siteRoot = coursesIndex >= 0 ? location.pathname.slice(0, coursesIndex + 1) : "/";
+          const coursesBase = new URL(siteRoot, location.origin);
+          const rootBase = new URL("../", coursesBase);
+          let target;
+          if (file.startsWith("/")) target = new URL(file, location.origin);
+          else if (file.startsWith("courses/")) target = new URL(file, rootBase);
+          else target = new URL(file, coursesBase);
+          if (target.origin !== location.origin || !/\.(md|markdown)$/i.test(target.pathname)) {
+            throw new Error("只允许读取本站内的 Markdown 文件。");
+          }
+          const response = await fetch(target.href);
+          if (!response.ok) throw new Error(`文件不存在（HTTP ${response.status}）。`);
+          const markdown = await response.text();
+          window.MARKDOWN_BASE_URL = new URL(".", target.href).href;
+          content.innerHTML = window.renderMarkdown(markdown);
+          const heading = content.querySelector("h1");
+          if (heading) document.title = `${heading.textContent} | 郭畅（Sing）`;
+          const courseMatch = target.pathname.match(/\/courses\/([^/]+)\//);
+          if (courseMatch) {
+            document.getElementById("back-link").href = `course.html?id=${encodeURIComponent(courseMatch[1])}`;
+          }
+        } catch (error) {
+          content.innerHTML = `<p class="data-error">Markdown 加载失败：${window.renderMarkdown(String(error.message || error))}</p>`;
+        }
+      })();
+    </script>
+  </body>
+</html>

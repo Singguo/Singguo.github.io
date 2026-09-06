@@ -13,6 +13,7 @@
 | 科研 | `research.html` | 研究方向、成果列表和方向筛选 |
 | 课程 | `courses.html` | 全部课程列表 |
 | 课程详情 | `courses/course.html?id=课程ID` | 课程资源和按周次整理的资料 |
+| Markdown 阅读页 | 由课程页自动跳转到 `courses/markdown.html` | 将课程 Markdown 排版为网页 |
 | 资源 | `resources.html` | 讲义、课程资源、视频和阅读入口 |
 | 联系 | `contact.html` | 邮箱、办公时间和外部链接 |
 | 博客 | `blog/index.html` | Hexo 生成的博客静态页面 |
@@ -28,11 +29,13 @@ data/
 
 js/
 ├── site-data.js    加载 JSON 数据
-└── site-render.js  将数据渲染到各页面
+├── site-render.js  将数据渲染到各页面
+└── markdown-render.js  将课程 Markdown 渲染为阅读页
 
 *.html              页面骨架和占位标记
 css/style.css       主站样式
 blog/               Hexo 博客构建产物
+.nojekyll            让 GitHub Pages 直接提供 JSON / Markdown 数据文件
 ```
 
 ## 本地预览
@@ -45,6 +48,10 @@ python3 -m http.server 8080
 
 然后打开 <http://127.0.0.1:8080/>。完整的数据字段说明、更新示例和发布流程见 [`网站数据更新与使用手册.md`](网站数据更新与使用手册.md)。
 
+Windows 用户也可以双击 [`预览网站.bat`](预览网站.bat)，它会自动启动预览并打开浏览器。
+
 ## 部署
 
 这是纯静态网站，不需要数据库或后端服务。将仓库推送到 GitHub 后，在仓库的 Pages 设置中选择分支和目录即可部署。大文件和视频建议使用云盘、代码托管或视频平台，网站只保存公开链接。
+
+仓库包含 `.nojekyll`，用于确保 GitHub Pages 直接提供 `data/*.json` 和课程 Markdown 文件。部署后的 HTTPS 页面可以正常读取这些同源文件；直接双击 HTML 产生的 `file://` 页面则会受到浏览器安全策略限制。
