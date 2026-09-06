@@ -472,6 +472,41 @@ footer {
   justify-content: space-between;
   min-height: 74px;
 }
+/* ===== 首页「最近更新」（由 js/site-render.js 渲染） ===== */
+.update-block {
+  margin-top: 76px;
+}
+.updates-list {
+  display: grid;
+  gap: 0;
+}
+.updates-item {
+  display: flex;
+  gap: 20px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+.updates-item strong {
+  display: block;
+  font-size: 16px;
+}
+.updates-item p {
+  margin: 2px 0 0;
+  color: #666;
+  font-size: 14px;
+}
+.updates-date {
+  flex: 0 0 110px;
+  padding-top: 2px;
+  color: #888;
+  font-size: 13px;
+}
+@media (max-width: 820px) {
+  .updates-item {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
 @media (max-width: 820px) {
   .container {
     width: min(100% - 36px, 620px);

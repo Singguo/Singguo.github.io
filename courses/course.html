@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>课程 | 郭畅（Sing）</title>
+    <meta name="description" content="课程讲义、代码、作业与课堂视频入口。" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="../index.html">Sing</a>
+        <nav><a href="../index.html">首页</a><a href="../about.html">个人信息</a><a href="../research.html">科研</a><a class="active" href="../courses.html">课程</a><a href="../resources.html">资源</a><a href="../blog/index.html">个人博客</a><a href="../contact.html">联系</a></nav>
+      </div>
+    </header>
+    <!-- 本页是通用课程模板：?id=xxx 由 js/site-render.js 从 data/courses.json 取对应课程渲染 -->
+    <main class="container course-page">
+      <div class="course-head" data-render="course-head"></div>
+      <div class="notice">本页只保存链接，不托管视频或大型文件。请在 <code>../data/courses.json</code> 中对应的课程里替换讲义、资源、作业与视频链接。</div>
+      <div class="course-grid course-sections" data-render="course-resources"></div>
+      <section class="weeks">
+        <div class="section-title">
+          <h2>教学周次</h2>
+          <span>按周次持续维护</span>
+        </div>
+        <div data-render="course-weeks"></div>
+      </section>
+    </main>
+    <footer>
+      <div class="container footer-wrap"><span>© <span data-field="site.copyrightYear">2026</span> <span data-field="teacher.initials">Sing</span></span><span data-field="site.footerTagline">Academic · Teaching · Open Resources</span></div>
+    </footer>
+    <script src="../js/site-data.js"></script>
+    <script src="../js/site-render.js"></script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+{
+  "join": {
+    "eyebrow": "JOIN US",
+    "title": "欢迎有兴趣的同学\n一起做。",
+    "paragraphs": [
+      "如果你对下面任何一个方向感兴趣，或者想做课程相关的研究项目，直接写信给我就好，附一份简历和一段你做过的东西的说明。",
+      "也欢迎高校与企业在安全评测、低资源语言数据、策略研究等方向上开展合作。"
+    ]
+  },
+  "topics": [
+    {
+      "id": "security",
+      "tag": "AI SECURITY",
+      "title": "人工智能安全",
+      "description": "关注模型在真实部署环境中的推理侧信道安全、越狱与提示注入、数据投毒，以及相应的评测基准与防御方法。"
+    },
+    {
+      "id": "nlp",
+      "tag": "LOW-RESOURCE NLP",
+      "title": "小语种文本纠错",
+      "description": "以波斯语和阿拉伯语等资源稀缺语言为典型场景，研究拼写纠错中的数据构建和自动评测，解决公开语料少、标注噪声高、大模型过度纠错这三个现实问题。"
+    },
+    {
+      "id": "quant",
+      "tag": "QUANTITATIVE",
+      "title": "量化投资与决策",
+      "description": "把时序建模与风险控制放在一起考虑，研究在不同市场、不同经济周期上的资产配置与收益策略，同时复现市面上各大“股神”的策略进行实盘实验。"
+    },
+    {
+      "id": "other",
+      "tag": "OTHER TOPICS",
+      "title": "其他研究",
+      "description": "其他的一些研究方向，比如机器学习与优化、计算机视觉与图形学、计算生物学等。"
+    }
+  ],
+  "publications": [
+    {
+      "dir": "security",
+      "year": 2026,
+      "title": "面向真实部署环境的大模型提示注入鲁棒性评测",
+      "authors": "作者示例 A、作者示例 B、郭畅（Sing）",
+      "venue": "会议 / 期刊示例",
+      "note": "摘要示例：构造覆盖多轮对话与工具调用场景的注入攻击集，并给出可复现的评测流程。",
+      "sample": true,
+      "links": [
+        { "label": "PDF", "url": "#" },
+        { "label": "Code", "url": "#" },
+        { "label": "Slides", "url": "#" }
+      ]
+    },
+    {
+      "dir": "security",
+      "year": 2025,
+      "title": "文本纠错模型上的对抗扰动迁移性研究",
+      "authors": "作者示例 C、郭畅（Sing）",
+      "venue": "会议 / 期刊示例",
+      "note": "摘要示例：检验在同一种语言上生成的扰动，能否迁移到不同规模与训练策略的纠错模型。",
+      "sample": true,
+      "links": [
+        { "label": "PDF", "url": "#" },
+        { "label": "Code", "url": "#" }
+      ]
+    },
+    {
+      "dir": "nlp",
+      "year": 2026,
+      "title": "低资源语言语法纠错的指令微调数据构造",
+      "authors": "作者示例 D、郭畅（Sing）",
+      "venue": "会议 / 期刊示例",
+      "note": "摘要示例：从平行语料自动构造带错误标签的指令数据，缓解标注成本高、噪声比例高的问题。",
+      "sample": true,
+      "links": [
+        { "label": "PDF", "url": "#" },
+        { "label": "Code", "url": "#" },
+        { "label": "Dataset", "url": "#" }
+      ]
+    },
+    {
+      "dir": "nlp",
+      "year": 2025,
+      "title": "面向波斯语的语法纠错自动评测指标",
+      "authors": "作者示例 E、作者示例 F、郭畅（Sing）",
+      "venue": "会议 / 期刊示例",
+      "note": "摘要示例：对比多类自动指标与人工打分的一致性，给出在小语种场景下的选用建议。",
+      "sample": true,
+      "links": [
+        { "label": "PDF", "url": "#" },
+        { "label": "Code", "url": "#" }
+      ]
+    },
+    {
+      "dir": "quant",
+      "year": 2025,
+      "title": "交易成本约束下的多因子组合再平衡",
+      "authors": "作者示例 G、郭畅（Sing）",
+      "venue": "会议 / 期刊示例",
+      "note": "摘要示例：把换手成本与流动性约束显式写入目标函数，观察净收益相对于基线策略的变化。",
+      "sample": true,
+      "links": [
+        { "label": "PDF", "url": "#" },
+        { "label": "Code", "url": "#" }
+      ]
+    },
+    {
+      "dir": "quant",
+      "year": 2024,
+      "title": "样本外漂移检测与回测可信度评估",
+      "authors": "作者示例 H、郭畅（Sing）",
+      "venue": "会议 / 期刊示例",
+      "note": "摘要示例：给出一套回测前的检查清单，用于识别数据泄漏、前视偏差与过拟合调参。",
+      "sample": true,
+      "links": [
+        { "label": "PDF", "url": "#" },
+        { "label": "Slides", "url": "#" }
+      ]
+    }
+  ],
+  "notice": "以下成果目前为测试数据，仅用于验证排版和筛选交互。正式上线前请替换为真实成果，并按年份倒序排列。",
+  "scholarUrl": "https://scholar.google.com/"
+}

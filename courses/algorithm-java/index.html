@@ -4,71 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>算法设计与分析基础（JAVA版）</title>
-    <link rel="stylesheet" href="../../css/style.css" />
-    <script src="../../js/site-data.js"></script>
+    <meta http-equiv="refresh" content="0; url=../course.html?id=algorithm-java" />
+    <link rel="canonical" href="https://singguo.github.io/courses/course.html?id=algorithm-java" />
   </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav-wrap">
-        <a class="brand" href="../../index.html">YOUR NAME</a>
-        <nav><a href="../../index.html">首页</a><a href="../../about.html">个人信息</a><a href="../../research.html">科研</a><a class="active" href="../../courses.html">课程</a><a href="../../resources.html">资源</a><a href="../../blog/index.html">个人博客</a><a href="../../contact.html">联系</a></nav>
-      </div>
-    </header>
-    <main class="container course-page">
-      <div class="course-head">
-        <div>
-          <span class="tag">2026 · Spring</span>
-          <h1>算法设计与分析基础（JAVA版）</h1>
-          <p class="lead">理解原理 → AI 辅助实现 → 真实问题 → 复盘与表达。</p>
-        </div>
-        <div class="course-badge">JAVA<br /><small>ALGORITHM</small></div>
-      </div>
-      <div class="notice">本页只保存链接，不托管视频或大型文件。请在 <code>../../js/site-data.js</code> 中替换为你的 Google Drive、GitHub、YouTube 链接。</div>
-      <div class="course-grid course-sections">
-        <section class="resource-block">
-          <h2>📚 课程讲义</h2>
-          <p>PDF / PPT / 阅读资料。</p>
-          <a id="slides-link" href="https://drive.google.com/">打开讲义 →</a>
-        </section>
-        <section class="resource-block">
-          <h2>💻 代码</h2>
-          <p>课堂 Java 示例与实验代码。</p>
-          <a id="code-link" href="https://github.com/">打开代码 →</a>
-        </section>
-        <section class="resource-block">
-          <h2>📝 作业</h2>
-          <p>题目、提交要求与评分标准。</p>
-          <a id="assignments-link" href="https://drive.google.com/">打开作业 →</a>
-        </section>
-        <section class="resource-block">
-          <h2>🎬 课堂视频</h2>
-          <p>课程录屏与补充讲解。</p>
-          <a id="recordings-link" href="https://www.youtube.com/">打开视频 →</a>
-        </section>
-      </div>
-      <section class="weeks">
-        <div class="section-title">
-          <h2>教学周次</h2>
-          <span>按周次持续维护</span>
-        </div>
-        <div id="weeks-container"></div>
-      </section>
-    </main>
-    <footer>
-      <div class="container footer-wrap"><span>© 2026 YOUR NAME</span><span>Algorithm Design &amp; Analysis Basics</span></div>
-    </footer>
-    <script>
-      const course = window.SITE_DATA.courses[0];
-      for (const key of ["slides", "code", "assignments", "recordings"]) document.getElementById(key + "-link").href = course.resources[key];
-      const label = { slides: "Slides", code: "Code", assignment: "Assignment", video: "Video" };
-      document.getElementById("weeks-container").innerHTML = course.weeks
-        .map(
-          (week) =>
-            `<div class="week"><div class="week-num">${week.no}</div><div><h3>${week.title}</h3><p>${week.text}</p><div class="links">${Object.entries(week.links)
-              .map(([key, url]) => `<a href="${url}">${label[key] || key}</a>`)
-              .join("")}</div></div></div>`,
-        )
-        .join("");
-    </script>
+  <body style="font-family: system-ui, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; padding: 3rem; line-height: 1.8">
+    <p>课程页已更新地址，正在跳转……</p>
+    <p>如未自动跳转，请点击：<a href="../course.html?id=algorithm-java">进入《算法设计与分析基础（JAVA版）》 →</a></p>
+    <script>location.replace("../course.html?id=algorithm-java");</script>
   </body>
 </html>

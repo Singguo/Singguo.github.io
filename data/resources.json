@@ -1,0 +1,30 @@
+[
+  {
+    "tag": "SLIDES",
+    "title": "课程讲义",
+    "description": "PDF、PPT、阅读材料和课程大纲。",
+    "url": "https://drive.google.com/",
+    "label": "打开讲义链接 →"
+  },
+  {
+    "tag": "RESOURCES",
+    "title": "课程资源",
+    "description": "课堂示例、代码仓库、论文、阅读材料和参考实现。",
+    "url": "https://github.com/",
+    "label": "打开课程资源链接 →"
+  },
+  {
+    "tag": "VIDEO",
+    "title": "课堂视频",
+    "description": "录课、补充讲解和课程回顾。",
+    "url": "https://www.youtube.com/",
+    "label": "打开视频链接 →"
+  },
+  {
+    "tag": "READING",
+    "title": "延伸阅读",
+    "description": "论文、书目、工具和互动示例。",
+    "url": "https://scholar.google.com/",
+    "label": "打开阅读链接 →"
+  }
+]

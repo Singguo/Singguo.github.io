@@ -1,0 +1,100 @@
+[
+  {
+    "id": "algorithm-java",
+    "year": 2026,
+    "term": "fall",
+    "title": "算法设计与分析基础（JAVA版）",
+    "shortTitle": "算法设计与分析",
+    "description": "从算法思想到 Java 实现，再到 AI 辅助编程与真实问题解决。",
+    "detail": "理解原理 → AI 辅助实现 → 真实问题 → 复盘与表达。",
+    "badge": "JAVA",
+    "badgeSub": "ALGORITHM",
+    "resources": {
+      "slides": "https://drive.google.com/替换为你的讲义文件夹",
+      "resources": "https://github.com/替换为课程资源仓库或资料文件夹",
+      "assignment": "https://drive.google.com/替换为你的作业文件夹",
+      "video": "https://www.youtube.com/替换为你的播放列表"
+    },
+    "weeks": [
+      {
+        "no": 1,
+        "title": "为什么要学习算法？",
+        "text": "问题意识、算法复杂度、AI 时代的算法学习方式。",
+        "resources": {
+          "slides": "https://drive.google.com/替换为第1周讲义",
+          "resources": "https://github.com/替换为第1周代码或阅读资料",
+          "assignment": "https://drive.google.com/替换为第1周作业"
+        }
+      },
+      {
+        "no": 2,
+        "title": "排序与搜索",
+        "text": "从暴力方法到分治思想，并用 Java 与 AI 编程工具完成实现。",
+        "resources": {
+          "slides": "https://drive.google.com/替换为第2周讲义",
+          "resources": "https://github.com/替换为第2周代码或阅读资料",
+          "video": "https://www.youtube.com/替换为第2周视频"
+        }
+      },
+      {
+        "no": 3,
+        "title": "数据结构与算法设计",
+        "text": "线性结构、树、图，以及如何判断一个问题适合什么算法。",
+        "resources": {
+          "slides": "https://drive.google.com/替换为第3周讲义",
+          "resources": "https://github.com/替换为第3周代码或阅读资料",
+          "assignment": "https://drive.google.com/替换为第3周作业"
+        }
+      }
+    ]
+  },
+  {
+    "id": "neural-network-dl",
+    "year": 2026,
+    "term": "fall",
+    "title": "神经网络与深度学习",
+    "shortTitle": "神经网络与深度学习",
+    "description": "从神经网络到深度学习，再到 AI 应用。",
+    "detail": "理解原理 → AI 辅助实现 → 真实问题 → 复盘与表达。",
+    "badge": "DL",
+    "badgeSub": "DEEP LEARNING",
+    "resources": {
+      "slides": "https://drive.google.com/替换为你的讲义文件夹",
+      "resources": "https://github.com/替换为课程资源仓库或资料文件夹",
+      "assignment": "https://drive.google.com/替换为你的作业文件夹",
+      "video": "https://www.youtube.com/替换为你的播放列表"
+    },
+    "weeks": [
+      {
+        "no": 1,
+        "title": "神经网络有哪些？",
+        "text": "感知机、前馈网络与激活函数，AI 时代的神经网络学习方式。",
+        "resources": {
+          "slides": "https://drive.google.com/替换为第1周讲义",
+          "resources": "https://github.com/替换为第1周代码或阅读资料",
+          "assignment": "https://drive.google.com/替换为第1周作业"
+        }
+      },
+      {
+        "no": 2,
+        "title": "误差反向传播",
+        "text": "从链式法则到反向传播算法，并用框架完成一次最小实现。",
+        "resources": {
+          "slides": "https://drive.google.com/替换为第2周讲义",
+          "resources": "https://github.com/替换为第2周代码或阅读资料",
+          "video": "https://www.youtube.com/替换为第2周视频"
+        }
+      },
+      {
+        "no": 3,
+        "title": "优化与正则化",
+        "text": "梯度下降的变体、过拟合与常见正则化手段。",
+        "resources": {
+          "slides": "https://drive.google.com/替换为第3周讲义",
+          "resources": "https://github.com/替换为第3周代码或阅读资料",
+          "assignment": "https://drive.google.com/替换为第3周作业"
+        }
+      }
+    ]
+  }
+]
