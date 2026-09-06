@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>科研 | 郭畅（Sing）</title>
+    <meta name="description" content="人工智能安全、小语种文本纠错与量化投资方向的研究方向、代表性成果与开源资源。" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">Sing</a>
+        <nav>
+          <a href="index.html">首页</a>
+          <a href="about.html">个人信息</a>
+          <a class="active" href="research.html">科研</a>
+          <a href="courses.html">课程</a>
+          <a href="resources.html">资源</a>
+          <a href="blog/index.html">个人博客</a>
+          <a href="contact.html">联系</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container page">
+      <p class="eyebrow">RESEARCH</p>
+      <h1>科研</h1>
+      <p class="lead">三条主线：人工智能安全、小语种文本纠错，以及面向真实决策场景的量化投资方法。</p>
+
+      <section class="join-banner">
+        <div>
+          <p class="eyebrow">JOIN US</p>
+          <h2>欢迎有兴趣的同学<br />一起做。</h2>
+        </div>
+        <div>
+          <p>如果你对下面任何一个方向感兴趣，或者想做课程相关的研究项目，直接写信给我就好，附一份简历和一段你做过的东西的说明。</p>
+          <p>也欢迎高校与企业在安全评测、低资源语言数据、策略研究等方向上开展合作。</p>
+          <div class="actions">
+            <a class="button" href="contact.html">联系我</a>
+            <a class="text-link" href="resources.html">先看看公开资源 →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="research-section" id="topics">
+        <div class="section-title">
+          <h2>研究方向</h2>
+          <span>点击「研究成果」查看该方向的成果</span>
+        </div>
+        <div class="paper-list">
+          <article class="paper">
+            <span class="tag">AI SECURITY</span>
+            <h2>人工智能安全</h2>
+            <p>关注模型在真实部署环境中的推理侧信道安全、越狱与提示注入、数据投毒，以及相应的评测基准与防御方法。</p>
+            <a class="text-link" href="#papers" data-filter="security" data-label="人工智能安全">研究成果 →</a>
+          </article>
+          <article class="paper">
+            <span class="tag">LOW-RESOURCE NLP</span>
+            <h2>小语种文本纠错</h2>
+            <p>以波斯语和阿拉伯语等资源稀缺语言为典型场景，研究拼写纠错中的数据构建和自动评测，解决公开语料少、标注噪声高、大模型过度纠错这三个现实问题。</p>
+            <a class="text-link" href="#papers" data-filter="nlp" data-label="小语种文本纠错">研究成果 →</a>
+          </article>
+          <article class="paper">
+            <span class="tag">QUANTITATIVE</span>
+            <h2>量化投资与决策</h2>
+            <p>把时序建模与风险控制放在一起考虑，研究在不同市场，不同经济周期上的资产配置与收益策略的研究。同时复现市面上各大“股神”的策略进行实盘实验。</p>
+            <a class="text-link" href="#papers" data-filter="quant" data-label="量化投资与决策">研究成果 →</a>
+          </article>
+          <article class="paper">
+            <span class="tag">QUANTITATIVE</span>
+            <h2>其他研究</h2>
+            <p>其他的一些研究方向，比如机器学习与优化、计算机视觉与图形学、计算生物学等。</p>
+            <a class="text-link" href="#papers" data-filter="other" data-label="其他研究">研究成果 →</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="research-section" id="papers">
+        <div class="section-title">
+          <h2>代表性成果</h2>
+          <span id="filter-chip" class="filter-chip" hidden>
+            只看：<strong id="filter-label"></strong>
+            <button type="button" id="filter-reset" title="显示全部">×</button>
+          </span>
+        </div>
+        <div class="notice"><strong>以下 6 条均为测试数据</strong>，仅用于验证排版和「研究成果」的筛选交互，作者、会议 / 期刊、链接都是编的。正式上线前请整段替换 <code>&lt;article class="pub"&gt;</code>，并按年份倒序排列；完整列表以 <a class="text-link" href="https://scholar.google.com/">Google Scholar</a> 为准。</div>
+        <div class="pub-list">
+          <article class="pub" data-dir="security">
+            <span class="pub-year">2026</span>
+            <div>
+              <h3>面向真实部署环境的大模型提示注入鲁棒性评测<span class="sample">测试数据</span></h3>
+              <p class="pub-meta">作者示例 A、作者示例 B、郭畅（Sing） · 会议 / 期刊示例</p>
+              <p class="pub-note">摘要示例：构造覆盖多轮对话与工具调用场景的注入攻击集，并给出可复现的评测流程。</p>
+              <div class="links">
+                <a href="#">PDF</a>
+                <a href="#">Code</a>
+                <a href="#">Slides</a>
+              </div>
+            </div>
+          </article>
+          <article class="pub" data-dir="security">
+            <span class="pub-year">2025</span>
+            <div>
+              <h3>文本纠错模型上的对抗扰动迁移性研究<span class="sample">测试数据</span></h3>
+              <p class="pub-meta">作者示例 C、郭畅（Sing） · 会议 / 期刊示例</p>
+              <p class="pub-note">摘要示例：检验在同一种语言上生成的扰动，能否迁移到不同规模与训练策略的纠错模型。</p>
+              <div class="links">
+                <a href="#">PDF</a>
+                <a href="#">Code</a>
+              </div>
+            </div>
+          </article>
+          <article class="pub" data-dir="nlp">
+            <span class="pub-year">2026</span>
+            <div>
+              <h3>低资源语言语法纠错的指令微调数据构造<span class="sample">测试数据</span></h3>
+              <p class="pub-meta">作者示例 D、郭畅（Sing） · 会议 / 期刊示例</p>
+              <p class="pub-note">摘要示例：从平行语料自动构造带错误标签的指令数据，缓解标注成本高、噪声比例高的问题。</p>
+              <div class="links">
+                <a href="#">PDF</a>
+                <a href="#">Code</a>
+                <a href="#">Dataset</a>
+              </div>
+            </div>
+          </article>
+          <article class="pub" data-dir="nlp">
+            <span class="pub-year">2025</span>
+            <div>
+              <h3>面向波斯语的语法纠错自动评测指标<span class="sample">测试数据</span></h3>
+              <p class="pub-meta">作者示例 E、作者示例 F、郭畅（Sing） · 会议 / 期刊示例</p>
+              <p class="pub-note">摘要示例：对比多类自动指标与人工打分的一致性，给出在小语种场景下的选用建议。</p>
+              <div class="links">
+                <a href="#">PDF</a>
+                <a href="#">Code</a>
+              </div>
+            </div>
+          </article>
+          <article class="pub" data-dir="quant">
+            <span class="pub-year">2025</span>
+            <div>
+              <h3>交易成本约束下的多因子组合再平衡<span class="sample">测试数据</span></h3>
+              <p class="pub-meta">作者示例 G、郭畅（Sing） · 会议 / 期刊示例</p>
+              <p class="pub-note">摘要示例：把换手成本与流动性约束显式写入目标函数，观察净收益相对于基线策略的变化。</p>
+              <div class="links">
+                <a href="#">PDF</a>
+                <a href="#">Code</a>
+              </div>
+            </div>
+          </article>
+          <article class="pub" data-dir="quant">
+            <span class="pub-year">2024</span>
+            <div>
+              <h3>样本外漂移检测与回测可信度评估<span class="sample">测试数据</span></h3>
+              <p class="pub-meta">作者示例 H、郭畅（Sing） · 会议 / 期刊示例</p>
+              <p class="pub-note">摘要示例：给出一套回测前的检查清单，用于识别数据泄漏、前视偏差与过拟合调参。</p>
+              <div class="links">
+                <a href="#">PDF</a>
+                <a href="#">Slides</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container footer-wrap"><span>© 2026 Sing</span><span>Research · Teaching · Open Resources</span></div>
+    </footer>
+    <script>
+      // 「研究成果」筛选：无 JS 时链接仍会跳转到成果区，有 JS 时按方向过滤
+      const pubs = Array.from(document.querySelectorAll(".pub"));
+      const chip = document.getElementById("filter-chip");
+      const chipLabel = document.getElementById("filter-label");
+
+      function applyFilter(dir, label) {
+        for (const pub of pubs) {
+          pub.hidden = dir !== "all" && pub.dataset.dir !== dir;
+        }
+        chip.hidden = dir === "all";
+        chipLabel.textContent = label;
+      }
+
+      for (const link of document.querySelectorAll("[data-filter]")) {
+        link.addEventListener("click", () => applyFilter(link.dataset.filter, link.dataset.label));
+      }
+      document.getElementById("filter-reset").addEventListener("click", () => applyFilter("all", ""));
+    </script>
+  </body>
+</html>
