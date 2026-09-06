@@ -651,4 +651,9 @@ footer {
     justify-content: center;
     gap: 4px;
   }
+  
+}
+/* 让 officeHours 字段内的 \n 显示为换行 */
+[data-field="officeHours"] {
+  white-space: pre-line;
 }
