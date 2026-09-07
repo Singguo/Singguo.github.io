@@ -82,14 +82,7 @@
       if (element.tagName === "A" && element.hasAttribute("data-email")) {
         element.href = "mailto:" + encodeURIComponent(value).replace(/%40/g, "@");
       }
-      // ★ 新增：若字段是 officeHours 且值为数组，用 <br> 换行
-      const fieldName = element.getAttribute("data-field");
-      if (fieldName.endsWith("officeHours") && Array.isArray(value)) {
-        element.innerHTML = value.map(esc).join("<br>");
-      } else {
-        element.textContent = value;
-      }
-
+      element.textContent = value;
     });
 
     const site = data.site || {};
@@ -183,7 +176,7 @@
       weeks.innerHTML = entries.length
         ? entries.map((week) => `
   <div class="week">
-    <div class="week-num">${esc(String(week.no).padStart(2, "0"))}</div>
+    <div class="week-num">${esc(String(week.no).padStart(2, "0"))}${week.time ? `<span class="week-time">${esc(week.time)}</span>` : ""}</div>
     <div>
       <h3>${esc(week.title)}</h3>
       <p>${esc(week.text || "")}</p>

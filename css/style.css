@@ -338,10 +338,20 @@ img.avatar {
   border-top: 1px solid var(--line);
 }
 .week-num {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
   padding-top: 4px;
   color: #999;
   font-size: 13px;
   font-weight: 800;
+}
+.week-time {
+  font-size: 12px;
+  font-weight: 400;
+  color: #b3b3b3;
+  letter-spacing: 0.04em;
 }
 .week h3 {
   margin: 0 0 4px;
@@ -651,9 +661,4 @@ footer {
     justify-content: center;
     gap: 4px;
   }
-  
-}
-/* 让 officeHours 字段内的 \n 显示为换行 */
-[data-field="officeHours"] {
-  white-space: pre-line;
 }

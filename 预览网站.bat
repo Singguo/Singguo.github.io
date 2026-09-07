@@ -17,5 +17,5 @@ if %errorlevel%==0 (
 )
 
 echo 未找到 Python。请安装 Python，或手动运行：
-echo python3 -m http.server 8080
+echo python -m http.server 8080
 pause

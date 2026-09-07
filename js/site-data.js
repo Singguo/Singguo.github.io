@@ -9,7 +9,7 @@
   const dataRoot = new URL("../data/", script && script.src ? script.src : location.href);
 
   function load(name) {
-    return fetch(new URL(name + ".json", dataRoot).href).then((response) => {
+    return fetch(new URL(name + ".json", dataRoot).href, { cache: "no-store" }).then((response) => {
       if (!response.ok) throw new Error("无法加载 " + name + ".json (HTTP " + response.status + ")");
       return response.json();
     });
