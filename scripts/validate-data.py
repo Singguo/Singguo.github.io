@@ -34,6 +34,17 @@ def check_url(value, location):
         raise ValueError(f"{location}: protocol-relative URLs are not supported")
 
 
+def check_optional_url(value, location):
+    """Validate a resource link when one has been supplied.
+
+    Course and weekly resources are intentionally optional: the frontend omits
+    their buttons until a link is available.
+    """
+    if value is None or (isinstance(value, str) and not value.strip()):
+        return
+    check_url(value, location)
+
+
 def main():
     site = read_json("site.json")
     courses = read_json("courses.json")
@@ -55,12 +66,12 @@ def main():
         raise ValueError("courses.json: course ids must be unique")
     for index, course in enumerate(courses):
         for key, value in (course.get("resources") or {}).items():
-            check_url(value, f"courses.json:courses[{index}].resources.{key}")
+            check_optional_url(value, f"courses.json:courses[{index}].resources.{key}")
         for week_index, week in enumerate(course.get("weeks") or []):
             if week.get("no") is None or not week.get("title"):
                 raise ValueError(f"courses.json:courses[{index}].weeks[{week_index}] needs no and title")
             for key, value in (week.get("resources") or week.get("links") or {}).items():
-                check_url(value, f"courses.json:courses[{index}].weeks[{week_index}].{key}")
+                check_optional_url(value, f"courses.json:courses[{index}].weeks[{week_index}].{key}")
 
     if not isinstance(research.get("topics"), list) or not isinstance(research.get("publications"), list):
         raise ValueError("research.json: topics and publications must be arrays")
